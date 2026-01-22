@@ -20,13 +20,13 @@ export default function Process() {
           subtitle="복잡한 절차 없이 빠르게 진행됩니다"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-12">
           {PROCESS_STEPS.map((item, index) => {
             const Icon = iconMap[item.icon]
             return (
               <div
                 key={index}
-                className="relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm"
+                className="relative bg-white rounded-2xl p-6 lg:p-8 shadow-sm w-full sm:w-[calc(50%-12px)] lg:w-[225px]"
               >
                 {/* Step Number */}
                 <div className="absolute -top-4 left-6 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
@@ -35,7 +35,7 @@ export default function Process() {
 
                 {/* Arrow for Desktop */}
                 {index < PROCESS_STEPS.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-2 transform -translate-y-1/2 z-10">
+                  <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 z-10">
                     <div className="w-4 h-4 border-t-2 border-r-2 border-primary-300 rotate-45"></div>
                   </div>
                 )}

@@ -6,8 +6,14 @@ import Container from '@/components/common/Container'
 import Section from '@/components/common/Section'
 import SectionTitle from '@/components/common/SectionTitle'
 
+type Status = {
+  name: string
+  amount: string
+  time: string
+}
+
 // 가상의 실시간 처리 현황 데이터
-const generateRandomStatus = () => {
+const generateRandomStatus = (): Status => {
   const names = ['김**', '이**', '박**', '최**', '정**', '강**', '조**', '윤**', '장**', '임**']
   const amounts = ['50만원', '100만원', '150만원', '200만원', '80만원', '120만원', '70만원', '90만원']
   const times = ['방금 전', '1분 전', '2분 전', '3분 전', '5분 전']
@@ -19,12 +25,22 @@ const generateRandomStatus = () => {
   }
 }
 
-const initialStatuses = Array.from({ length: 5 }, generateRandomStatus)
+// 고정된 초기 데이터 (hydration 불일치 방지)
+const fixedInitialStatuses: Status[] = [
+  { name: '김**', amount: '100만원', time: '방금 전' },
+  { name: '이**', amount: '150만원', time: '1분 전' },
+  { name: '박**', amount: '80만원', time: '2분 전' },
+  { name: '최**', amount: '200만원', time: '3분 전' },
+  { name: '정**', amount: '120만원', time: '5분 전' },
+]
 
 export default function LiveStatus() {
-  const [statuses, setStatuses] = useState(initialStatuses)
+  const [statuses, setStatuses] = useState<Status[]>(fixedInitialStatuses)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
+
     const interval = setInterval(() => {
       setStatuses(prev => {
         const newStatus = generateRandomStatus()
@@ -58,9 +74,9 @@ export default function LiveStatus() {
             <div className="divide-y divide-gray-100">
               {statuses.map((status, index) => (
                 <div
-                  key={index}
+                  key={`${status.name}-${status.amount}-${index}`}
                   className={`px-6 py-4 flex items-center justify-between transition-all duration-500 ${
-                    index === 0 ? 'bg-green-50' : ''
+                    index === 0 && isClient ? 'bg-green-50' : ''
                   }`}
                 >
                   <span className="text-gray-900 font-medium">{status.name}</span>
