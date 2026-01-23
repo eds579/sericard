@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, MessageCircle } from 'lucide-react'
 import { SITE_CONFIG, NAV_ITEMS } from '@/lib/constants'
 
 export default function Header() {
@@ -35,10 +35,10 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href={SITE_CONFIG.phoneTel}
+              href={SITE_CONFIG.phoneSms}
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
             >
-              <Phone className="w-5 h-5" />
+              <MessageCircle className="w-5 h-5" />
               <span>{SITE_CONFIG.phoneDisplay}</span>
             </a>
           </div>
@@ -69,10 +69,10 @@ export default function Header() {
               ))}
               <div className="px-4 pt-4">
                 <a
-                  href={SITE_CONFIG.phoneTel}
+                  href={SITE_CONFIG.phoneSms}
                   className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
                 >
-                  <Phone className="w-5 h-5" />
+                  <MessageCircle className="w-5 h-5" />
                   <span>{SITE_CONFIG.phoneDisplay}</span>
                 </a>
               </div>

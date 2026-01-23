@@ -1,4 +1,4 @@
-import { Phone } from 'lucide-react'
+import { Phone, MessageCircle } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/constants'
 import Container from '@/components/common/Container'
 
@@ -16,13 +16,20 @@ export default function HubHero() {
             안전하고 빠른 카드 현금화, 세리카드와 함께하세요.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={SITE_CONFIG.phoneTel}
+              href={SITE_CONFIG.phoneSms}
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary-600 text-white font-bold text-xl rounded-xl hover:bg-primary-700 transition-all shadow-xl"
             >
+              <MessageCircle className="w-6 h-6" />
+              <span>{SITE_CONFIG.phoneDisplay}</span>
+            </a>
+            <a
+              href={SITE_CONFIG.phoneTel}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gray-700 text-white font-bold text-xl rounded-xl hover:bg-gray-600 transition-all shadow-xl"
+            >
               <Phone className="w-6 h-6" />
-              <span>지금 바로 상담하기</span>
+              <span>{SITE_CONFIG.phoneDisplay}</span>
             </a>
           </div>
         </div>

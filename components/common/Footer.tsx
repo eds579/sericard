@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Phone } from 'lucide-react'
+import { Phone, MessageCircle } from 'lucide-react'
 import { SITE_CONFIG, NAV_ITEMS, SERVICE_INFO } from '@/lib/constants'
 
 export default function Footer() {
@@ -17,15 +17,22 @@ export default function Footer() {
             <p className="mt-4 text-gray-400 max-w-md">
               {SITE_CONFIG.description}
             </p>
-            <div className="mt-6">
+            <div className="mt-6 space-y-3">
+              <a
+                href={SITE_CONFIG.phoneSms}
+                className="inline-flex items-center gap-2 text-xl font-bold text-white hover:text-primary-400 transition-colors"
+              >
+                <MessageCircle className="w-6 h-6" />
+                <span>{SITE_CONFIG.phoneDisplay}</span>
+              </a>
               <a
                 href={SITE_CONFIG.phoneTel}
-                className="inline-flex items-center gap-2 text-xl font-bold text-white hover:text-primary-400 transition-colors"
+                className="flex items-center gap-2 text-xl font-bold text-white hover:text-primary-400 transition-colors"
               >
                 <Phone className="w-6 h-6" />
                 <span>{SITE_CONFIG.phoneDisplay}</span>
               </a>
-              <p className="mt-2 text-sm text-gray-400">
+              <p className="text-sm text-gray-400">
                 {SERVICE_INFO.operatingHours} 상담 가능
               </p>
             </div>
@@ -60,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8">
           <p className="text-center text-sm text-gray-500">
             &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>

@@ -95,15 +95,24 @@ export default function ContactPage() {
                 지금 바로 상담받으세요
               </h2>
               <p className="text-primary-100 mb-8">
-                전화 한 통이면 됩니다. 친절하게 안내해 드립니다.
+                문자 또는 전화 한 통이면 됩니다. 친절하게 안내해 드립니다.
               </p>
-              <a
-                href={SITE_CONFIG.phoneTel}
-                className="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary-600 font-bold text-2xl rounded-xl hover:bg-gray-100 transition-colors shadow-xl"
-              >
-                <Phone className="w-8 h-8" />
-                {SITE_CONFIG.phoneDisplay}
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href={SITE_CONFIG.phoneSms}
+                  className="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary-600 font-bold text-2xl rounded-xl hover:bg-gray-100 transition-colors shadow-xl"
+                >
+                  <MessageCircle className="w-8 h-8" />
+                  {SITE_CONFIG.phoneDisplay}
+                </a>
+                <a
+                  href={SITE_CONFIG.phoneTel}
+                  className="inline-flex items-center gap-3 px-10 py-5 bg-primary-700 text-white font-bold text-2xl rounded-xl hover:bg-primary-800 transition-colors shadow-xl"
+                >
+                  <Phone className="w-8 h-8" />
+                  {SITE_CONFIG.phoneDisplay}
+                </a>
+              </div>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-primary-100">
                 <span className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-400 rounded-full"></span>

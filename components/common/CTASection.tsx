@@ -1,4 +1,4 @@
-import { Phone } from 'lucide-react'
+import { Phone, MessageCircle } from 'lucide-react'
 import { SITE_CONFIG, SERVICE_INFO } from '@/lib/constants'
 import Container from './Container'
 
@@ -24,8 +24,15 @@ export default function CTASection({
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={SITE_CONFIG.phoneTel}
+              href={SITE_CONFIG.phoneSms}
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 font-bold text-xl rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              <MessageCircle className="w-6 h-6" />
+              <span>{SITE_CONFIG.phoneDisplay}</span>
+            </a>
+            <a
+              href={SITE_CONFIG.phoneTel}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary-700 text-white font-bold text-xl rounded-xl hover:bg-primary-800 transition-colors shadow-lg"
             >
               <Phone className="w-6 h-6" />
               <span>{SITE_CONFIG.phoneDisplay}</span>

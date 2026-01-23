@@ -1,4 +1,4 @@
-import { Phone, Clock, Zap, Shield } from 'lucide-react'
+import { MessageCircle, Phone, Clock, Zap, Shield } from 'lucide-react'
 import { SITE_CONFIG, SERVICE_INFO } from '@/lib/constants'
 import Container from '@/components/common/Container'
 
@@ -33,19 +33,26 @@ export default function Hero() {
             세리카드와 함께라면 안전하고 빠릅니다
           </p>
 
-          {/* CTA Button */}
-          <div className="mt-10">
+          {/* CTA Buttons */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={SITE_CONFIG.phoneSms}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 font-bold text-xl rounded-xl hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+            >
+              <MessageCircle className="w-6 h-6" />
+              <span>{SITE_CONFIG.phoneDisplay}</span>
+            </a>
             <a
               href={SITE_CONFIG.phoneTel}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-primary-600 font-bold text-xl rounded-xl hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary-700 text-white font-bold text-xl rounded-xl hover:bg-primary-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
             >
               <Phone className="w-6 h-6" />
               <span>{SITE_CONFIG.phoneDisplay}</span>
             </a>
-            <p className="mt-4 text-primary-200 text-sm">
-              전화 한 통이면 끝! 지금 바로 상담하세요
-            </p>
           </div>
+          <p className="mt-4 text-primary-200 text-sm">
+            문자 또는 전화 한 통이면 끝! 지금 바로 상담하세요
+          </p>
 
           {/* Trust Badges */}
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
