@@ -1,9 +1,17 @@
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 import './globals.css'
 import { SITE_CONFIG } from '@/lib/constants'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import FloatingCTA from '@/components/common/FloatingCTA'
+
+const pretendard = localFont({
+  src: '../public/fonts/PretendardVariable.woff2',
+  display: 'swap',
+  weight: '45 920',
+  variable: '--font-pretendard',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
@@ -59,15 +67,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko">
-      <head>
-        <link
-          rel="stylesheet"
-          as="style"
-          crossOrigin="anonymous"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
-        />
-      </head>
+    <html lang="ko" className={pretendard.variable}>
       <body className="font-sans antialiased">
         <Header />
         <main>{children}</main>
