@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   phoneDisplay: '010-7715-1404',
   phoneTel: 'tel:010-7715-1404',
   phoneSms: 'sms:010-7715-1404',
-  description: '신용카드 현금화 전문 세리카드. 24시간 365일 운영, 업계 최저 수수료, 최대 3분 이내 입금.',
+  description: '신용카드 현금화 전문 세리카드. 24시간 365일 운영, 카드깡 업계 최저 수수료, 최대 3분 이내 현금 입금.',
 } as const
 
 export const SERVICE_INFO = {

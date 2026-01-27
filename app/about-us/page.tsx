@@ -1,18 +1,13 @@
-import { Metadata } from 'next'
 import { Shield, Users, Clock, Award } from 'lucide-react'
 import Container from '@/components/common/Container'
 import Section from '@/components/common/Section'
 import SectionTitle from '@/components/common/SectionTitle'
 import CTASection from '@/components/common/CTASection'
-import { SITE_CONFIG } from '@/lib/constants'
+import { AboutPageJsonLd } from '@/components/seo/JsonLd'
+import { generatePageMetadata } from '@/lib/metadata'
+import { PAGE_META } from '@/lib/pages'
 
-export const metadata: Metadata = {
-  title: '회사 소개 - 세리카드',
-  description: '세리카드는 고객 신뢰를 최우선으로 하는 카드 현금화 전문 서비스입니다. 24시간 365일 운영, 업계 최저 수수료, 최대 3분 입금.',
-  alternates: {
-    canonical: `${SITE_CONFIG.url}/about-us`,
-  },
-}
+export const metadata = generatePageMetadata(PAGE_META.aboutUs)
 
 const values = [
   {
@@ -40,6 +35,7 @@ const values = [
 export default function AboutUsPage() {
   return (
     <>
+      <AboutPageJsonLd />
       {/* Hero */}
       <section className="pt-24 lg:pt-32 pb-16 lg:pb-20 bg-gradient-to-br from-primary-600 to-primary-800">
         <Container>

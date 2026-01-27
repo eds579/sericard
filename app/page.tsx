@@ -7,13 +7,12 @@ import LiveStatus from '@/components/home/LiveStatus'
 import StatsReviews from '@/components/home/StatsReviews'
 import FAQ from '@/components/home/FAQ'
 import CTASection from '@/components/common/CTASection'
-import { FAQPageJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd'
+import { HomePageJsonLd } from '@/components/seo/JsonLd'
 
 export default function HomePage() {
   return (
     <>
-      <FAQPageJsonLd />
-      <ServiceJsonLd />
+      <HomePageJsonLd />
       <Hero />
       <Strengths />
       <Service />

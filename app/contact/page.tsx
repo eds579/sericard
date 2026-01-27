@@ -1,16 +1,12 @@
-import { Metadata } from 'next'
-import { Phone, Clock, MessageCircle, MapPin } from 'lucide-react'
+import { Phone, Clock, MessageCircle } from 'lucide-react'
 import Container from '@/components/common/Container'
 import Section from '@/components/common/Section'
 import { SITE_CONFIG, SERVICE_INFO } from '@/lib/constants'
+import { ContactPageJsonLd } from '@/components/seo/JsonLd'
+import { generatePageMetadata } from '@/lib/metadata'
+import { PAGE_META } from '@/lib/pages'
 
-export const metadata: Metadata = {
-  title: '문의하기 - 세리카드',
-  description: '세리카드 문의하기. 24시간 365일 상담 가능합니다. 전화: 010-7715-1404. 카드 현금화 관련 문의를 친절하게 안내해 드립니다.',
-  alternates: {
-    canonical: `${SITE_CONFIG.url}/contact`,
-  },
-}
+export const metadata = generatePageMetadata(PAGE_META.contact)
 
 const contactInfo = [
   {
@@ -35,6 +31,7 @@ const contactInfo = [
 export default function ContactPage() {
   return (
     <>
+      <ContactPageJsonLd />
       {/* Hero */}
       <section className="pt-24 lg:pt-32 pb-16 lg:pb-20 bg-gradient-to-br from-gray-900 to-gray-800">
         <Container>

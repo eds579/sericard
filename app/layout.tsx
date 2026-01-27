@@ -4,10 +4,13 @@ import { SITE_CONFIG } from '@/lib/constants'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import FloatingCTA from '@/components/common/FloatingCTA'
-import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd'
 
 export const metadata: Metadata = {
-  title: `${SITE_CONFIG.name} | 카드 현금화 24시간 3분 입금`,
+  metadataBase: new URL(SITE_CONFIG.url),
+  title: {
+    default: `${SITE_CONFIG.name} | 카드깡 업체 · 신용카드 현금화 24시간 3분 입금`,
+    template: `%s | ${SITE_CONFIG.name}`,
+  },
   description: SITE_CONFIG.description,
   keywords: ['카드 현금화', '신용카드 현금화', '세리카드', '카드깡', '현금화'],
   authors: [{ name: SITE_CONFIG.name }],
@@ -31,13 +34,22 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
-    title: `${SITE_CONFIG.name} | 카드 현금화 24시간 3분 입금`,
+    title: `${SITE_CONFIG.name} | 카드깡 업체 · 신용카드 현금화 24시간 3분 입금`,
     description: SITE_CONFIG.description,
+    images: [
+      {
+        url: '/images/cards/세리카드.png',
+        width: 1200,
+        height: 630,
+        alt: '세리카드 - 카드 현금화 전문 서비스',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_CONFIG.name} | 카드 현금화 24시간 3분 입금`,
+    title: `${SITE_CONFIG.name} | 카드깡 업체 · 신용카드 현금화 24시간 3분 입금`,
     description: SITE_CONFIG.description,
+    images: ['/images/cards/세리카드.png'],
   },
 }
 
@@ -55,8 +67,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
         />
-        <OrganizationJsonLd />
-        <WebSiteJsonLd />
       </head>
       <body className="font-sans antialiased">
         <Header />
