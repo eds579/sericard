@@ -45,4 +45,12 @@ export const PAGE_META = {
     sitemapPriority: 0.8,
     sitemapChangeFreq: 'monthly',
   },
+  blog: {
+    title: '블로그',
+    description: '카드 현금화, 카드깡에 대한 유용한 정보를 제공합니다. 안전한 카드 현금화 방법, 수수료, 주의사항 등 다양한 정보를 확인하세요.',
+    path: '/blog',
+    breadcrumbLabel: '블로그',
+    sitemapPriority: 0.8,
+    sitemapChangeFreq: 'weekly',
+  },
 } as const satisfies Record<string, PageMeta>

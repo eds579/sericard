@@ -199,3 +199,17 @@ export function ContactPageJsonLd() {
     />
   )
 }
+
+// 범용 JSON-LD 컴포넌트 (블로그 등에서 사용)
+type JsonLdProps = {
+  data: Record<string, unknown>
+}
+
+export function JsonLd({ data }: JsonLdProps) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
