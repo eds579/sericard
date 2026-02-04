@@ -5,6 +5,10 @@ import { SITE_CONFIG } from '@/lib/constants'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
 import FloatingCTA from '@/components/common/FloatingCTA'
+import {
+  GoogleTagManagerHead,
+  GoogleTagManagerBody,
+} from '@/components/common/GoogleTagManager'
 
 const pretendard = localFont({
   src: '../public/fonts/PretendardVariable.woff2',
@@ -68,7 +72,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={pretendard.variable}>
+      <head>
+        <GoogleTagManagerHead />
+      </head>
       <body className="font-sans antialiased">
+        <GoogleTagManagerBody />
         <Header />
         <main>{children}</main>
         <Footer />
