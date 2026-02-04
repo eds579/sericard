@@ -2,11 +2,9 @@
 
 import Script from 'next/script'
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
+const GTM_ID = 'GTM-N9JGFG84'
 
 export function GoogleTagManagerHead() {
-  if (!GTM_ID) return null
-
   return (
     <Script
       id="gtm-script"
@@ -25,8 +23,6 @@ export function GoogleTagManagerHead() {
 }
 
 export function GoogleTagManagerBody() {
-  if (!GTM_ID) return null
-
   return (
     <noscript>
       <iframe
