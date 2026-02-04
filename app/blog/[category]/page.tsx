@@ -26,14 +26,26 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params
   const categoryMeta = getCategoryMeta(category)
+  const pageUrl = `${SITE_CONFIG.url}/blog/${category}`
+  const fullTitle = `${categoryMeta.title} | ${SITE_CONFIG.name}`
 
   return {
     title: categoryMeta.title,
     description: categoryMeta.description,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
-      title: `${categoryMeta.title} | ${SITE_CONFIG.name}`,
+      title: fullTitle,
       description: categoryMeta.description,
       type: 'website',
+      url: pageUrl,
+      siteName: SITE_CONFIG.name,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: fullTitle,
+      description: categoryMeta.description,
     },
   }
 }

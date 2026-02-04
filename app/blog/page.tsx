@@ -8,13 +8,27 @@ import CTASection from '@/components/common/CTASection'
 import { getAllPosts, getPostCount } from '@/lib/blog'
 import { SITE_CONFIG } from '@/lib/constants'
 
+const pageTitle = '카드깡 · 카드 현금화 정보 블로그'
+const pageDescription = '카드깡, 신용카드 현금화에 대한 모든 정보를 제공합니다. 카드 현금화 방법, 수수료, 안전한 이용법까지 세리카드 블로그에서 확인하세요.'
+const pageUrl = `${SITE_CONFIG.url}/blog`
+
 export const metadata: Metadata = {
-  title: '카드깡 · 카드 현금화 정보 블로그',
-  description: '카드깡, 신용카드 현금화에 대한 모든 정보를 제공합니다. 카드 현금화 방법, 수수료, 안전한 이용법까지 세리카드 블로그에서 확인하세요.',
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: pageUrl,
+  },
   openGraph: {
-    title: `카드깡 · 카드 현금화 정보 블로그 | ${SITE_CONFIG.name}`,
-    description: '카드깡, 신용카드 현금화에 대한 모든 정보를 제공합니다. 카드 현금화 방법, 수수료, 안전한 이용법까지 세리카드 블로그에서 확인하세요.',
+    title: `${pageTitle} | ${SITE_CONFIG.name}`,
+    description: pageDescription,
     type: 'website',
+    url: pageUrl,
+    siteName: SITE_CONFIG.name,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${pageTitle} | ${SITE_CONFIG.name}`,
+    description: pageDescription,
   },
 }
 

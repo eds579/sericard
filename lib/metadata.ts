@@ -21,6 +21,8 @@ export function generatePageMetadata({
   const fullDescription = description || SITE_CONFIG.description
   const url = `${SITE_CONFIG.url}${path}`
   const defaultKeywords = ['카드 현금화', '신용카드 현금화', '세리카드', '카드깡', '현금화']
+  // title.template은 <title> 태그에만 적용되므로, OG/Twitter에는 직접 브랜드명 추가
+  const fullTitle = title ? `${title} | ${SITE_CONFIG.name}` : SITE_CONFIG.name
 
   return {
     title: title, // title.template이 적용됨
@@ -38,7 +40,7 @@ export function generatePageMetadata({
       locale: 'ko_KR',
       url: url,
       siteName: SITE_CONFIG.name,
-      title: title,
+      title: fullTitle,
       description: fullDescription,
       images: [
         {
@@ -51,7 +53,7 @@ export function generatePageMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: title,
+      title: fullTitle,
       description: fullDescription,
       images: [DEFAULT_OG_IMAGE],
     },

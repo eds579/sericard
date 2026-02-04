@@ -35,21 +35,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   }
 
+  const pageUrl = `${SITE_CONFIG.url}/blog/${category}/${slug}`
+  const fullTitle = `${post.title} | ${SITE_CONFIG.name}`
+
   return {
     title: post.title,
     description: post.excerpt,
     keywords: post.tags,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
-      title: `${post.title} | ${SITE_CONFIG.name}`,
+      title: fullTitle,
       description: post.excerpt,
       type: 'article',
+      url: pageUrl,
+      siteName: SITE_CONFIG.name,
       publishedTime: post.date,
       authors: [post.author],
       images: post.image ? [post.image] : [],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${post.title} | ${SITE_CONFIG.name}`,
+      title: fullTitle,
       description: post.excerpt,
       images: post.image ? [post.image] : [],
     },
