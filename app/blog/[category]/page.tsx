@@ -6,6 +6,7 @@ import SectionTitle from '@/components/common/SectionTitle'
 import BlogCard from '@/components/blog/BlogCard'
 import CategoryFilter from '@/components/blog/CategoryFilter'
 import CTASection from '@/components/common/CTASection'
+import { BlogCategoryJsonLd } from '@/components/seo/JsonLd'
 import {
   getPostsByCategory,
   getPostCount,
@@ -64,6 +65,9 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <>
+      {/* JSON-LD */}
+      <BlogCategoryJsonLd categorySlug={category} categoryMeta={categoryMeta} />
+
       {/* 헤더 섹션 */}
       <Section bgColor="gray">
         <Container>

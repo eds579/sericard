@@ -6,7 +6,7 @@ import BlogContent from '@/components/blog/BlogContent'
 import BlogTOC from '@/components/blog/BlogTOC'
 import BlogNavigation from '@/components/blog/BlogNavigation'
 import CTASection from '@/components/common/CTASection'
-import { JsonLd } from '@/components/seo/JsonLd'
+import { BlogPostJsonLd } from '@/components/seo/JsonLd'
 import {
   getPostBySlug,
   getAdjacentPosts,
@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: pageUrl,
       siteName: SITE_CONFIG.name,
       publishedTime: post.date,
+      modifiedTime: '2026-02-04',
       authors: [post.author],
       images: post.image ? [post.image] : [],
     },
@@ -75,65 +76,18 @@ export default async function BlogPostPage({ params }: Props) {
   const { prev, next } = getAdjacentPosts(category, slug)
   const headings = extractHeadings(post.content)
 
-  // JSON-LD 데이터
-  const articleJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    author: {
-      '@type': 'Organization',
-      name: post.author,
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: SITE_CONFIG.name,
-      url: SITE_CONFIG.url,
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${SITE_CONFIG.url}/blog/${post.categorySlug}/${post.slug}`,
-    },
-    ...(post.image && { image: `${SITE_CONFIG.url}${post.image}` }),
-  }
-
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: '홈',
-        item: SITE_CONFIG.url,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: '블로그',
-        item: `${SITE_CONFIG.url}/blog`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: getCategoryName(post.categorySlug),
-        item: `${SITE_CONFIG.url}/blog/${post.categorySlug}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: post.title,
-        item: `${SITE_CONFIG.url}/blog/${post.categorySlug}/${post.slug}`,
-      },
-    ],
-  }
-
   return (
     <>
       {/* JSON-LD */}
-      <JsonLd data={articleJsonLd} />
-      <JsonLd data={breadcrumbJsonLd} />
+      <BlogPostJsonLd
+        title={post.title}
+        description={post.excerpt}
+        slug={post.slug}
+        categorySlug={post.categorySlug}
+        categoryName={getCategoryName(post.categorySlug)}
+        datePublished={post.date}
+        image={post.image}
+      />
 
       {/* 히어로 섹션 (브레드크럼 포함) */}
       <BlogHero

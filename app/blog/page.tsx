@@ -5,6 +5,7 @@ import SectionTitle from '@/components/common/SectionTitle'
 import BlogCard from '@/components/blog/BlogCard'
 import CategoryFilter from '@/components/blog/CategoryFilter'
 import CTASection from '@/components/common/CTASection'
+import { BlogMainJsonLd } from '@/components/seo/JsonLd'
 import { getAllPosts, getPostCount } from '@/lib/blog'
 import { SITE_CONFIG } from '@/lib/constants'
 
@@ -38,6 +39,9 @@ export default function BlogPage() {
 
   return (
     <>
+      {/* JSON-LD */}
+      <BlogMainJsonLd />
+
       {/* 헤더 섹션 */}
       <Section bgColor="gray">
         <Container>
