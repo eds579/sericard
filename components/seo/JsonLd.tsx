@@ -414,6 +414,7 @@ type BlogPostJsonLdProps = {
   categorySlug: string
   categoryName: string
   datePublished: string
+  dateModified: string
   image?: string
 }
 
@@ -424,6 +425,7 @@ export function BlogPostJsonLd({
   categorySlug,
   categoryName,
   datePublished,
+  dateModified,
   image,
 }: BlogPostJsonLdProps) {
   const postPath = `/blog/${categorySlug}/${slug}`
@@ -441,7 +443,7 @@ export function BlogPostJsonLd({
         description: description,
         inLanguage: 'ko',
         datePublished: datePublished,
-        dateModified: DATE_MODIFIED,
+        dateModified: dateModified,
         publisher: {
           '@type': 'Organization',
           '@id': IDS.organization,
@@ -463,7 +465,7 @@ export function BlogPostJsonLd({
         headline: title,
         description: description,
         datePublished: datePublished,
-        dateModified: DATE_MODIFIED,
+        dateModified: dateModified,
         articleSection: categoryName,
         author: {
           '@type': 'Organization',

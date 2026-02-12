@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: pageUrl,
       siteName: SITE_CONFIG.name,
       publishedTime: post.date,
-      modifiedTime: '2026-02-04',
+      modifiedTime: post.dateModified,
       authors: [post.author],
       images: post.image ? [post.image] : [],
     },
@@ -86,6 +86,7 @@ export default async function BlogPostPage({ params }: Props) {
         categorySlug={post.categorySlug}
         categoryName={getCategoryName(post.categorySlug)}
         datePublished={post.date}
+        dateModified={post.dateModified}
         image={post.image}
       />
 

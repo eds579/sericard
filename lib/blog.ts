@@ -57,6 +57,7 @@ export interface BlogPost {
   title: string
   excerpt: string
   date: string            // YYYY-MM-DD
+  dateModified: string    // YYYY-MM-DD
   author: string
   tags: string[]
   image?: string
@@ -114,6 +115,7 @@ export function getAllPosts(): BlogPost[] {
       title: data.title || '',
       excerpt: data.excerpt || '',
       date: data.date || '',
+      dateModified: data.dateModified || data.date || '',
       author: data.author || '세리카드',
       tags: data.tags || [],
       image: data.image,
