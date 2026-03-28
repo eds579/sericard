@@ -15,7 +15,7 @@ export default function Safety() {
     <Section bgColor="gray">
       <Container>
         <SectionTitle
-          title="안전한 카드 현금화를 위한 가이드"
+          title="안전한 카드깡을 위한 가이드"
           subtitle="세리카드와 함께 안전하게 이용하세요"
         />
 

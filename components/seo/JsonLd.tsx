@@ -169,11 +169,12 @@ export function HubPageJsonLd() {
         },
         about: {
           '@type': 'Thing',
-          name: '카드 현금화',
+          name: '카드깡',
         },
         mentions: [
+          { '@type': 'Thing', name: '카드 현금화' },
           { '@type': 'Thing', name: '신용카드 현금화' },
-          { '@type': 'Thing', name: '카드깡' },
+          { '@type': 'Thing', name: '카드현금화' },
         ],
       },
       // 2. Service (확장)
@@ -181,10 +182,10 @@ export function HubPageJsonLd() {
         '@type': 'Service',
         '@id': IDS.service,
         url: `${SITE_CONFIG.url}${page.path}`,
-        name: '카드 현금화',
-        alternateName: ['신용카드 현금화', '카드깡'],
-        serviceType: '카드현금화 서비스',
-        description: '신용카드 현금화 서비스. 24시간 365일 운영, 최대 3분 이내 입금.',
+        name: '카드깡',
+        alternateName: ['카드현금화', '신용카드현금화', '카드 현금화', '신용카드 현금화'],
+        serviceType: '카드깡 서비스',
+        description: '카드깡(신용카드 현금화) 서비스. 24시간 365일 운영, 최대 3분 이내 입금.',
         provider: {
           '@type': 'Organization',
           '@id': IDS.organization,
@@ -219,7 +220,7 @@ export function HubPageJsonLd() {
       // 3. BreadcrumbList
       createBreadcrumbList(page.path, [
         { name: PAGE_META.home.breadcrumbLabel, path: '' },
-        { name: page.breadcrumbLabel, path: page.path },
+        { name: '카드깡', path: page.path },
       ]),
     ],
   }

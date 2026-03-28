@@ -58,7 +58,7 @@ export const PROCESS_STEPS = [
 
 export const NAV_ITEMS = [
   { label: '홈', href: '/' },
-  { label: '카드 현금화', href: '/card-cashout' },
+  { label: '카드깡', href: '/card-cashout' },
   { label: '블로그', href: '/blog' },
   { label: '회사 소개', href: '/about-us' },
   { label: '문의하기', href: '/contact' },

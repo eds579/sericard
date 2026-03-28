@@ -21,10 +21,10 @@ export const PAGE_META = {
     sitemapChangeFreq: 'weekly',
   },
   cardCashout: {
-    title: '카드 현금화 - 신용카드 현금화 방법 총정리',
-    description: '카드 현금화란? 신용카드 현금화의 모든 것을 알려드립니다. 안전한 카드깡 이용 방법, 수수료, 주의사항까지 세리카드에서 확인하세요. 24시간 365일 상담 가능.',
+    title: '카드깡 서비스 - 신용카드 현금화 방법 총정리 | 세리카드',
+    description: '카드깡이란? 신용카드 현금화의 모든 것을 안내합니다. 카드깡 수수료, 안전한 이용 방법, 업체 선택 기준까지 세리카드에서 확인하세요. 24시간 365일 상담 가능.',
     path: '/card-cashout',
-    keywords: ['카드 현금화', '신용카드 현금화', '카드 현금화 방법', '카드 현금화 수수료', '안전한 카드 현금화'],
+    keywords: ['카드깡', '카드현금화', '신용카드현금화', '카드깡수수료', '카드깡업체', '카드현금화방법', '신용카드 현금화 업체'],
     breadcrumbLabel: '카드 현금화',
     sitemapPriority: 0.9,
     sitemapChangeFreq: 'weekly',

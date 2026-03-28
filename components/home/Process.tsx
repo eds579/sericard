@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Phone, UserCheck, CreditCard, Banknote, LucideIcon } from 'lucide-react'
 import Container from '@/components/common/Container'
 import Section from '@/components/common/Section'
@@ -11,7 +12,7 @@ const iconMap: Record<string, LucideIcon> = {
   Banknote,
 }
 
-export default function Process() {
+export default function Process({ showLinks = false }: { showLinks?: boolean }) {
   return (
     <Section bgColor="gray">
       <Container>
@@ -63,6 +64,19 @@ export default function Process() {
             전체 과정 최대 3분 소요
           </p>
         </div>
+
+        {showLinks && (
+          <div className="mt-8 text-center text-sm text-gray-500 space-y-1">
+            <p>
+              카드깡 이용 방법을 더 자세히 알고 싶다면{' '}
+              <Link href="/blog/card-cashout/카드깡-하는법" className="text-primary-600 hover:underline">카드깡 하는법: 초보자를 위한 단계별 가이드</Link>를 참고하세요.
+            </p>
+            <p>
+              다양한 카드현금화방법이 궁금하시다면{' '}
+              <Link href="/blog/card-cashout/카드현금화-방법" className="text-primary-600 hover:underline">카드 현금화 방법 5가지 총정리</Link>에서 확인하실 수 있습니다.
+            </p>
+          </div>
+        )}
       </Container>
     </Section>
   )

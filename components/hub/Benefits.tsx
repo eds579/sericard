@@ -41,7 +41,7 @@ export default function Benefits() {
     <Section bgColor="gray">
       <Container>
         <SectionTitle
-          title="세리카드 카드 현금화의 장점"
+          title="세리카드 카드깡 서비스의 장점"
           subtitle="왜 세리카드를 선택해야 할까요?"
         />
 

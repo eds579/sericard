@@ -4,59 +4,81 @@ import Container from '@/components/common/Container'
 import Section from '@/components/common/Section'
 import SectionTitle from '@/components/common/SectionTitle'
 
-// 추후 블로그 데이터로 대체
-const posts = [
+const categories = [
   {
-    title: '카드 현금화 방법 총정리',
-    description: '카드 현금화의 다양한 방법과 절차를 상세히 알아봅니다.',
-    href: '/blog/card-cashout-method',
+    label: '카드깡 기본 가이드',
+    posts: [
+      { title: '카드깡이란? 뜻과 개념 완벽 정리', href: '/blog/card-cashout/카드깡이란' },
+      { title: '신용카드 현금화 뜻과 구조 총정리', href: '/blog/card-cashout/신용카드현금화-뜻' },
+      { title: '카드 현금화란? 원리부터 이해하기', href: '/blog/card-cashout/카드현금화란' },
+    ],
   },
   {
-    title: '카드 현금화 수수료 안내',
-    description: '카드 현금화 시 발생하는 수수료와 비용에 대해 설명합니다.',
-    href: '/blog/card-cashout-fee',
+    label: '이용 방법',
+    posts: [
+      { title: '카드 현금화 방법 5가지 총정리', href: '/blog/card-cashout/카드현금화-방법' },
+      { title: '카드깡 하는법: 초보자를 위한 단계별 가이드', href: '/blog/card-cashout/카드깡-하는법' },
+    ],
   },
   {
-    title: '안전한 카드 현금화 업체 선택법',
-    description: '믿을 수 있는 카드 현금화 업체를 선택하는 방법을 안내합니다.',
-    href: '/blog/card-cashout-safe',
+    label: '수수료·비용',
+    posts: [
+      { title: '카드깡 수수료 2026년 시세 총정리', href: '/blog/card-cashout/카드깡-수수료' },
+      { title: '카드깡 vs 현금서비스: 어떤 게 유리할까?', href: '/blog/card-cashout/카드깡-vs-현금서비스' },
+    ],
+  },
+  {
+    label: '안전·주의사항',
+    posts: [
+      { title: '카드깡 사기 유형과 예방법 총정리', href: '/blog/card-cashout/카드깡-사기' },
+      { title: '카드깡 안전하게 이용하는 5가지 체크리스트', href: '/blog/card-cashout/카드깡-안전' },
+      { title: '카드깡이 신용등급에 미치는 영향', href: '/blog/card-cashout/카드깡-신용등급' },
+    ],
+  },
+  {
+    label: '업체 선택·법적 안내',
+    posts: [
+      { title: '카드깡 업체 선택 가이드: 안전한 업체 고르는 5가지 기준', href: '/blog/card-cashout/카드깡-업체' },
+      { title: '카드깡 불법인가요? 이용자가 알아야 할 법적 사항', href: '/blog/card-cashout/카드깡-불법' },
+      { title: '카드깡 처벌 사례와 법적 리스크 정리', href: '/blog/card-cashout/카드깡-처벌' },
+    ],
+  },
+  {
+    label: '카드사별 안내',
+    posts: [
+      { title: '신한카드 카드깡 이용 가이드', href: '/blog/card-cashout/신한카드깡' },
+      { title: '삼성카드 카드깡 이용 가이드', href: '/blog/card-cashout/삼성카드깡' },
+    ],
   },
 ]
 
 export default function RelatedPosts() {
-  // 블로그가 아직 없으므로 일단 숨김 처리
-  const showPosts = false
-
-  if (!showPosts) {
-    return null
-  }
-
   return (
     <Section>
       <Container>
         <SectionTitle
-          title="관련 글"
-          subtitle="카드 현금화에 대해 더 알아보세요"
+          title="카드깡 더 알아보기"
+          subtitle="카드깡에 대해 더 궁금한 점이 있다면 아래 가이드를 확인해 보세요"
         />
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {posts.map((post, index) => (
-            <Link
-              key={index}
-              href={post.href}
-              className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-primary-300 hover:shadow-lg transition-all"
-            >
-              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                {post.title}
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {post.description}
-              </p>
-              <span className="inline-flex items-center gap-1 text-primary-600 text-sm font-medium">
-                자세히 보기
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
+        <div className="max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((category) => (
+            <div key={category.label} className="bg-white border border-gray-200 rounded-xl p-5">
+              <p className="text-sm font-bold text-primary-600 mb-3">{category.label}</p>
+              <ul className="space-y-2">
+                {category.posts.map((post) => (
+                  <li key={post.href}>
+                    <Link
+                      href={post.href}
+                      className="group flex items-start gap-2 text-sm text-gray-700 hover:text-primary-600 transition-colors"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-gray-400 group-hover:text-primary-500 transition-colors" />
+                      <span>{post.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </Container>

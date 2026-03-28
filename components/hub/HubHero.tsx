@@ -8,12 +8,12 @@ export default function HubHero() {
       <Container>
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            카드 현금화란?
+            카드깡이란?
           </h1>
           <p className="mt-6 text-lg lg:text-xl text-gray-300 leading-relaxed">
-            신용카드 현금화에 대한 모든 것을 알려드립니다.
+            카드깡에 대한 모든 것을 알려드립니다.
             <br className="hidden sm:block" />
-            안전하고 빠른 카드 현금화, 세리카드와 함께하세요.
+            안전하고 빠른 신용카드현금화, 세리카드와 함께하세요.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
