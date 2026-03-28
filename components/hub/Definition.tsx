@@ -49,7 +49,7 @@ export default function Definition() {
             <h3 className="text-xl font-bold text-gray-900 mb-4">카드깡의 원리와 구조</h3>
             <div className="bg-white border border-gray-200 rounded-xl p-6 text-gray-700 leading-relaxed">
               <p className="mb-3">
-                세리카드가 다년간의 운영 경험을 통해 가장 많이 받는 질문이 "카드깡이 정확히 어떤 구조인가요?"입니다.
+                세리카드가 다년간의 운영 경험을 통해 가장 많이 받는 질문이 &quot;카드깡이 정확히 어떤 구조인가요?&quot;입니다.
                 카드깡은 신용카드의 쇼핑 한도를 활용하는 방식입니다. 현금서비스처럼 카드사에서 직접 돈을 빌리는 것이
                 아니라, 카드 결제를 통해 현금을 확보하는 구조입니다. 카드현금화, 신용카드현금화라고도 불리며,
                 별도의 대출 심사 없이 카드 한도 내에서 자유롭게 이용할 수 있다는 것이 가장 큰 장점입니다.
