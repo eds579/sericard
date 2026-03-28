@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react'
 import Container from '@/components/common/Container'
 import Section from '@/components/common/Section'
 import SectionTitle from '@/components/common/SectionTitle'
-import { FAQ_ITEMS } from '@/lib/constants'
+import { FAQ_ITEMS } from '@/lib/faq'
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -40,9 +40,9 @@ export default function FAQ() {
 
               {openIndex === index && (
                 <div className="px-6 pb-5">
-                  <p className="text-gray-600 leading-relaxed">
+                  <div className="text-gray-600 leading-relaxed">
                     {item.answer}
-                  </p>
+                  </div>
                 </div>
               )}
             </div>

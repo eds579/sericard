@@ -6,6 +6,7 @@ import Notice from '@/components/home/Notice'
 import LiveStatus from '@/components/home/LiveStatus'
 import StatsReviews from '@/components/home/StatsReviews'
 import FAQ from '@/components/home/FAQ'
+import BlogGuide from '@/components/home/BlogGuide'
 import CTASection from '@/components/common/CTASection'
 import { HomePageJsonLd } from '@/components/seo/JsonLd'
 
@@ -21,6 +22,7 @@ export default function HomePage() {
       <LiveStatus />
       <StatsReviews />
       <FAQ />
+      <BlogGuide />
       <CTASection />
     </>
   )

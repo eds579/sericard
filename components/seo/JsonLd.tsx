@@ -1,4 +1,5 @@
-import { SITE_CONFIG, FAQ_ITEMS } from '@/lib/constants'
+import { SITE_CONFIG } from '@/lib/constants'
+import { FAQ_ITEMS } from '@/lib/faq'
 import { PAGE_META } from '@/lib/pages'
 import { CategoryMeta } from '@/lib/blog'
 
@@ -123,7 +124,7 @@ export function HomePageJsonLd() {
           name: item.question,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: item.answer,
+            text: item.answerText,
           },
         })),
       },
