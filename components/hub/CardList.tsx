@@ -53,6 +53,9 @@ export default function CardList() {
               <Link href="/blog/card-cashout/우리카드깡" className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 hover:border-primary-300 hover:text-primary-600 transition-colors">
                 우리카드 카드깡 이용 가이드
               </Link>
+              <Link href="/blog/card-cashout/농협카드깡" className="inline-flex items-center gap-1.5 px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm text-gray-700 hover:border-primary-300 hover:text-primary-600 transition-colors">
+                농협카드 카드깡 이용 가이드
+              </Link>
             </div>
           </div>
         </div>
